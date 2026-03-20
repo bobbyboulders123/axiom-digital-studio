@@ -14,7 +14,6 @@ const Hero = () => {
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      // Polish load-in sequence
       tl.fromTo(
         bgRef.current,
         { scale: 1.1, opacity: 0, rotateX: 10 },
@@ -39,7 +38,6 @@ const Hero = () => {
           "-=0.8",
         );
 
-      // Subtle breathable float for the background
       gsap.to(bgRef.current, {
         yPercent: -1.5,
         duration: 5,
@@ -54,10 +52,10 @@ const Hero = () => {
 
   return (
     <section
+      id="home"
       ref={containerRef}
-      className="relative min-h-[100dvh] w-full flex items-center px-6 pt-28 lg:pt-32 overflow-hidden bg-[#05070A] perspective-1000"
+      className="relative min-h-[100dvh] w-full flex items-center px-6 pt-24 lg:pt-28 overflow-hidden bg-[#05070A] perspective-1000"
     >
-      {/* Absolute Premium Angled Tech Background Visuals */}
       <div
         ref={bgRef}
         className="absolute inset-0 z-0 overflow-hidden pointer-events-none origin-bottom"
@@ -79,9 +77,9 @@ const Hero = () => {
           style={{
             transform: "rotateX(45deg) scale(1.2) translateY(-10%)",
             backgroundImage: `
-            linear-gradient(rgba(124,138,153,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(124,138,153,0.1) 1px, transparent 1px)
-          `,
+              linear-gradient(rgba(124,138,153,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(124,138,153,0.1) 1px, transparent 1px)
+            `,
             backgroundSize: "80px 80px",
             backgroundPosition: "center top",
           }}
@@ -102,13 +100,12 @@ const Hero = () => {
 
       <div
         ref={contentRef}
-        className="relative z-20 w-full max-w-6xl mx-auto flex flex-col items-center text-center"
+        className="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center text-center"
         style={{ perspective: "1000px" }}
       >
-
         <h1
           ref={headlineRef}
-          className="text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] font-semibold tracking-tight text-white mb-6 drop-shadow-2xl"
+          className="max-w-4xl text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] font-semibold tracking-tight text-white mb-6 drop-shadow-2xl"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan to-electric">
             Premium websites
@@ -119,7 +116,7 @@ const Hero = () => {
 
         <p
           ref={sublineRef}
-          className="font-mono text-cyan uppercase tracking-widest text-sm md:text-base mb-12 flex items-center gap-4 drop-shadow-md"
+          className="font-mono text-cyan uppercase tracking-widest text-sm md:text-base mb-12 flex items-center justify-center gap-4 drop-shadow-md"
         >
           <span className="w-10 h-[1px] bg-cyan/60 block shadow-glow"></span>
           Built with precision.
