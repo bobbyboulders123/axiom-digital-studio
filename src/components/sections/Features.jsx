@@ -155,31 +155,33 @@ const Features = () => {
             <GlowCard
               customSize={true}
               glowColor="cyan"
-              className="group h-[360px] md:h-[400px] overflow-hidden transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
+              className="group h-[360px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
             >
-              <h3 className="text-white font-medium text-2xl mb-3 z-20 relative transition-transform duration-500 group-hover:translate-x-2">
-                Tailored Premium Design
-              </h3>
-              <p className="text-steel text-base z-20 relative transition-transform duration-500 group-hover:translate-x-2">
-                Automated design iterations ensuring absolute visual perfection.
-              </p>
+              <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
+                <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
+                  Tailored Premium Design
+                </h3>
+                <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
+                  Automated design iterations ensuring absolute visual perfection.
+                </p>
 
-              <div className="mt-auto relative w-full h-[180px] flex items-end justify-center pb-6">
-                {[1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    ref={(el) => (shufflerCardsRef.current[i - 1] = el)}
-                    className="absolute w-full h-[100px] bg-[#1B2430]/90 backdrop-blur-md border border-steel/20 rounded-xl shadow-lg flex items-center p-4 opacity-0 translate-y-4"
-                  >
-                    <div className="w-10 h-10 rounded bg-cyan/10 border border-cyan/30 flex items-center justify-center mr-4">
-                      <span className="text-cyan text-xs font-mono">0{i}</span>
+                <div className="mt-auto relative w-full h-[180px] flex items-end justify-center pb-6 rounded-[1rem]">
+                  {[1, 2, 3].map((i) => (
+                    <div
+                      key={i}
+                      ref={(el) => (shufflerCardsRef.current[i - 1] = el)}
+                      className="absolute w-full h-[100px] bg-[#1B2430]/90 backdrop-blur-md border border-steel/20 rounded-xl shadow-lg flex items-center p-4 opacity-0 translate-y-4"
+                    >
+                      <div className="w-10 h-10 rounded bg-cyan/10 border border-cyan/30 flex items-center justify-center mr-4">
+                        <span className="text-cyan text-xs font-mono">0{i}</span>
+                      </div>
+                      <div className="space-y-3 flex-grow">
+                        <div className="h-1.5 w-3/4 bg-steel/30 rounded"></div>
+                        <div className="h-1.5 w-1/2 bg-steel/20 rounded"></div>
+                      </div>
                     </div>
-                    <div className="space-y-3 flex-grow">
-                      <div className="h-1.5 w-3/4 bg-steel/30 rounded"></div>
-                      <div className="h-1.5 w-1/2 bg-steel/20 rounded"></div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </GlowCard>
           </div>
@@ -188,30 +190,32 @@ const Features = () => {
             <GlowCard
               customSize={true}
               glowColor="electricBlue"
-              className="group h-[360px] md:h-[400px] overflow-hidden transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
+              className="group h-[360px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
             >
-              <h3 className="text-white font-medium text-2xl mb-3 z-20 relative transition-transform duration-500 group-hover:translate-x-2">
-                Modern, High-Performance
-              </h3>
-              <p className="text-steel text-base z-20 relative transition-transform duration-500 group-hover:translate-x-2">
-                Built on next-gen architecture for maximum speed and SEO.
-              </p>
+              <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
+                <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
+                  Modern, High-Performance
+                </h3>
+                <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
+                  Built on next-gen architecture for maximum speed and SEO.
+                </p>
 
-              <div className="mt-8 relative w-full h-[180px] bg-[#0B0F14] rounded-xl border border-steel/10 p-5 font-mono text-xs text-cyan/80 flex flex-col shadow-inner">
-                <div className="flex items-center gap-3 mb-5 border-b border-steel/10 pb-3">
-                  <div className="w-2 h-2 rounded-full bg-cyan animate-pulse shadow-glow"></div>
-                  <span className="text-steel uppercase tracking-widest text-[10px]">
-                    Sys_Log
-                  </span>
-                </div>
+                <div className="mt-8 relative w-full h-[180px] bg-[#0B0F14] rounded-xl border border-steel/10 p-5 font-mono text-xs text-cyan/80 flex flex-col shadow-inner">
+                  <div className="flex items-center gap-3 mb-5 border-b border-steel/10 pb-3">
+                    <div className="w-2 h-2 rounded-full bg-cyan animate-pulse shadow-glow"></div>
+                    <span className="text-steel uppercase tracking-widest text-[10px]">
+                      Sys_Log
+                    </span>
+                  </div>
 
-                <div className="text-cyan/70 whitespace-pre-line leading-relaxed flex-grow relative overflow-hidden">
-                  <span>{typedText.line1}</span>
-                  <br />
-                  <span className="opacity-70">{typedText.line2}</span>
-                  <br />
-                  <span className="text-white text-shadow-glow">{typedText.line3}</span>
-                  <span className="inline-block w-1.5 h-3 ml-1 bg-cyan/80 animate-pulse align-middle"></span>
+                  <div className="text-cyan/70 whitespace-pre-line leading-relaxed flex-grow relative overflow-hidden">
+                    <span>{typedText.line1}</span>
+                    <br />
+                    <span className="opacity-70">{typedText.line2}</span>
+                    <br />
+                    <span className="text-white text-shadow-glow">{typedText.line3}</span>
+                    <span className="inline-block w-1.5 h-3 ml-1 bg-cyan/80 animate-pulse align-middle"></span>
+                  </div>
                 </div>
               </div>
             </GlowCard>
@@ -221,57 +225,59 @@ const Features = () => {
             <GlowCard
               customSize={true}
               glowColor="steel"
-              className="group h-[360px] md:h-[400px] overflow-hidden transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
+              className="group h-[360px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
             >
-              <h3 className="text-white font-medium text-2xl mb-3 z-20 relative transition-transform duration-500 group-hover:translate-x-2">
-                Elevate Your Brand
-              </h3>
-              <p className="text-steel text-base z-20 relative transition-transform duration-500 group-hover:translate-x-2">
-                Websites programmed to build trust and scale authority.
-              </p>
+              <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
+                <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
+                  Elevate Your Brand
+                </h3>
+                <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
+                  Websites programmed to build trust and scale authority.
+                </p>
 
-              <div className="mt-8 relative w-full h-[180px] bg-[#1B2430]/40 rounded-xl border border-steel/10 p-5">
-                <div className="grid grid-cols-4 gap-3 h-full relative z-10">
-                  {[...Array(8)].map((_, i) => (
+                <div className="mt-8 relative w-full h-[180px] bg-[#1B2430]/40 rounded-xl border border-steel/10 p-5">
+                  <div className="grid grid-cols-4 gap-3 h-full relative z-10">
+                    {[...Array(8)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="bg-[#0B0F14]/80 border border-steel/10 rounded-lg group-hover:border-steel/20 transition-colors"
+                      ></div>
+                    ))}
+
                     <div
-                      key={i}
-                      className="bg-[#0B0F14]/80 border border-steel/10 rounded-lg group-hover:border-steel/20 transition-colors"
-                    ></div>
-                  ))}
+                      ref={targetAreaRef}
+                      className="bg-[#0B0F14] border border-steel/20 rounded-lg relative flex items-center justify-center col-span-2 row-span-2 transition-colors"
+                    >
+                      <span className="text-steel/60 text-xs font-mono">deploy()</span>
+                    </div>
 
-                  <div
-                    ref={targetAreaRef}
-                    className="bg-[#0B0F14] border border-steel/20 rounded-lg relative flex items-center justify-center col-span-2 row-span-2 transition-colors"
-                  >
-                    <span className="text-steel/60 text-xs font-mono">deploy()</span>
+                    {[...Array(4)].map((_, i) => (
+                      <div
+                        key={`end-${i}`}
+                        className="bg-[#0B0F14]/80 border border-steel/10 rounded-lg group-hover:border-steel/20 transition-colors"
+                      ></div>
+                    ))}
                   </div>
 
-                  {[...Array(4)].map((_, i) => (
-                    <div
-                      key={`end-${i}`}
-                      className="bg-[#0B0F14]/80 border border-steel/10 rounded-lg group-hover:border-steel/20 transition-colors"
-                    ></div>
-                  ))}
-                </div>
-
-                <div
-                  ref={cursorRef}
-                  className="absolute top-0 left-0 w-6 h-6 z-20 pointer-events-none drop-shadow-[0_0_8px_rgba(53,208,255,0.8)]"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    ref={cursorRef}
+                    className="absolute top-0 left-0 w-6 h-6 z-20 pointer-events-none drop-shadow-[0_0_8px_rgba(53,208,255,0.8)]"
                   >
-                    <path
-                      d="M5.5 2.5L19.5 10L12 11.5L9.5 19L5.5 2.5Z"
-                      stroke="#35D0FF"
-                      strokeWidth="1.5"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.5 2.5L19.5 10L12 11.5L9.5 19L5.5 2.5Z"
+                        stroke="#35D0FF"
+                        strokeWidth="1.5"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </GlowCard>

@@ -44,7 +44,7 @@ const Philosophy = () => {
                 The Manifesto
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.1] manifesto-text drop-shadow-md">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold text-white leading-[1.1] manifesto-text drop-shadow-md">
               We engineer
               <br />
               digital instruments.
