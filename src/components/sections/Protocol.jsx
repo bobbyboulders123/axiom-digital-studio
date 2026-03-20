@@ -16,13 +16,11 @@ const Protocol = () => {
         end: `+=${cards.length * 100}%`,
         pin: true,
         scrub: true,
-        animation: gsap
-          .timeline()
-          .to(cards.slice(1), {
-            yPercent: -100,
-            ease: 'none',
-            stagger: 0.5,
-          }),
+        animation: gsap.timeline().to(cards.slice(1), {
+          yPercent: -100,
+          ease: 'none',
+          stagger: 0.5,
+        }),
       })
     }, containerRef)
 
@@ -107,8 +105,6 @@ const Protocol = () => {
                 </p>
               </div>
             </div>
-
-            <div className="absolute bottom-0 right-1/4 w-[1px] h-32 bg-gradient-to-t from-cyan/50 to-transparent pointer-events-none"></div>
           </div>
         ))}
       </div>

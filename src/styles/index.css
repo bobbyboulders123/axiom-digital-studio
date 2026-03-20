@@ -22,6 +22,14 @@
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -30,6 +38,7 @@
     background-color: var(--color-background);
     color: var(--color-textLight);
     font-family: var(--font-sans);
+    overscroll-behavior-x: none;
   }
 }
 
