@@ -137,15 +137,22 @@ const Features = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 relative z-10">
         <div className="md:col-span-5 relative">
           <div className="md:sticky md:top-[35vh]">
-            <div className="absolute -left-6 top-2 w-1 h-24 bg-gradient-to-b from-electric to-cyan/20"></div>
+            <div className="mb-7 inline-flex items-center gap-4">
+              <div className="h-8 w-[3px] rounded-full bg-gradient-to-b from-electric via-cyan to-cyan/20" />
+              <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-white/80">
+                AXIOM // SERVICES
+              </span>
+            </div>
 
-            <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 drop-shadow-md">
-              Functional Artifacts
+            <h2 className="text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
+              Functional systems.
+              <br />
+              Premium execution.
             </h2>
 
-            <p className="text-steel max-w-sm text-lg leading-relaxed">
-              Precision-engineered solutions tailored for performance, design, and
-              absolute credibility.
+            <p className="mt-6 max-w-md text-base leading-7 text-steel md:text-lg">
+              Precision-engineered digital environments built for performance,
+              design, trust, and long-term credibility.
             </p>
           </div>
         </div>
