@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import GlobalNoise from './components/ui/GlobalNoise'
 import Navbar from './components/layout/Navbar'
@@ -9,6 +9,7 @@ import Philosophy from './components/sections/Philosophy'
 import Protocol from './components/sections/Protocol'
 import CtaSection from './components/sections/CtaSection'
 import LegalPage from './pages/LegalPage'
+import Preloader from './components/ui/Preloader'
 
 function ScrollToHash() {
   const location = useLocation()
@@ -16,7 +17,7 @@ function ScrollToHash() {
   useEffect(() => {
     if (!location.hash) {
       if (location.pathname === '/') {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 0, behavior: 'auto' })
       }
       return
     }
@@ -57,6 +58,20 @@ function HomePage() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1400)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading) {
+    return <Preloader />
+  }
+
   return (
     <>
       <ScrollToHash />

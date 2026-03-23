@@ -12,30 +12,34 @@ const Hero = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
+      gsap.set([bgRef.current, headlineRef.current, sublineRef.current, ctaRef.current], {
+        willChange: "transform, opacity",
+      });
+
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       tl.fromTo(
         bgRef.current,
         { scale: 1.1, opacity: 0, rotateX: 10 },
-        { scale: 1, opacity: 1, rotateX: 0, duration: 2, ease: "power2.out" },
+        { scale: 1, opacity: 1, rotateX: 0, duration: 2, ease: "power2.out" }
       )
         .fromTo(
           headlineRef.current,
           { y: 60, opacity: 0, rotationX: 15 },
           { y: 0, opacity: 1, rotationX: 0, duration: 1.4 },
-          "-=1.2",
+          "-=1.2"
         )
         .fromTo(
           sublineRef.current,
           { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 1 },
-          "-=1.0",
+          "-=1.0"
         )
         .fromTo(
           ctaRef.current,
           { y: 20, opacity: 0 },
           { y: 0, opacity: 1, duration: 1 },
-          "-=0.8",
+          "-=0.8"
         );
 
       gsap.to(bgRef.current, {
@@ -58,7 +62,7 @@ const Hero = () => {
     >
       <div
         ref={bgRef}
-        className="absolute inset-0 z-0 overflow-hidden pointer-events-none origin-bottom"
+        className="absolute inset-0 z-0 overflow-hidden pointer-events-none origin-bottom opacity-0"
         style={{ transformStyle: "preserve-3d" }}
       >
         <div
@@ -105,7 +109,7 @@ const Hero = () => {
       >
         <h1
           ref={headlineRef}
-          className="max-w-4xl text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] font-semibold tracking-tight text-white mb-6 drop-shadow-2xl"
+          className="max-w-4xl text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] font-semibold tracking-tight text-white mb-6 drop-shadow-2xl opacity-0"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan to-electric">
             Premium websites
@@ -116,7 +120,7 @@ const Hero = () => {
 
         <p
           ref={sublineRef}
-          className="font-mono text-cyan uppercase tracking-widest text-sm md:text-base mb-12 flex items-center justify-center gap-4 drop-shadow-md"
+          className="font-mono text-cyan uppercase tracking-widest text-sm md:text-base mb-12 flex items-center justify-center gap-4 drop-shadow-md opacity-0"
         >
           <span className="w-10 h-[1px] bg-cyan/60 block shadow-glow"></span>
           Built with precision.
@@ -124,7 +128,7 @@ const Hero = () => {
 
         <div
           ref={ctaRef}
-          className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-4"
+          className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-4 opacity-0"
         >
           <Button variant="primary" className="py-4 px-10 text-lg">
             Start Your Project
