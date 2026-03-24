@@ -1,5 +1,6 @@
-import React from 'react'
-import Button from '../ui/Button'
+import React from "react";
+import Button from "../ui/Button";
+import ContactUsButton from "../contact/ContactUsButton.jsx";
 
 const CtaSection = () => {
   return (
@@ -20,25 +21,25 @@ const CtaSection = () => {
         </h2>
 
         <p className="text-steel text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-          Partner with Axiom Digital Studio to replace your generic website with a
-          high-performance, premium digital experience.
+          Partner with Axiom Digital Studio to replace your generic website with
+          a high-performance, premium digital experience.
         </p>
 
-        <Button className="px-10 py-5 text-lg uppercase" variant="primary">
-          Book a Consultation
-        </Button>
+        <ContactUsButton className="px-8 py-4 text-lg" variant="primary">
+          Contact Us
+        </ContactUsButton>
       </div>
 
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(124, 138, 153, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 138, 153, 0.1) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
+            "linear-gradient(rgba(124, 138, 153, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 138, 153, 0.1) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
         }}
       ></div>
     </section>
-  )
-}
+  );
+};
 
-export default CtaSection
+export default CtaSection;

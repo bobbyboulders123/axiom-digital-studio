@@ -1,106 +1,107 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { gsap } from '../../utils/gsapUtils'
-import { Menu, X } from 'lucide-react'
-import Button from '../ui/Button'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from "react";
+import { gsap } from "../../utils/gsapUtils";
+import { Menu, X } from "lucide-react";
+import Button from "../ui/Button";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import ContactUsButton from "../contact/ContactUsButton.jsx";
 
 const navItems = [
-  { label: 'Services', to: '/#services', sectionId: 'services' },
-  { label: 'Proof', to: '/#proof', sectionId: 'proof' },
-  { label: 'Process', to: '/#process', sectionId: 'process' },
-  { label: 'Legal', to: '/legal', sectionId: null },
-]
+  { label: "Services", to: "/#services", sectionId: "services" },
+  { label: "Proof", to: "/#proof", sectionId: "proof" },
+  { label: "Process", to: "/#process", sectionId: "process" },
+  { label: "Legal", to: "/legal", sectionId: null },
+];
 
-const sectionOrder = ['home', 'services', 'proof', 'process', 'contact']
+const sectionOrder = ["home", "services", "proof", "process", "contact"];
 
 const Navbar = () => {
-  const navRef = useRef(null)
-  const location = useLocation()
-  const navigate = useNavigate()
-  const [activeSection, setActiveSection] = useState('home')
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const navRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.to(navRef.current, {
         scrollTrigger: {
-          trigger: 'body',
-          start: '20px top',
-          end: '80px top',
-          toggleActions: 'play none none reverse',
+          trigger: "body",
+          start: "20px top",
+          end: "80px top",
+          toggleActions: "play none none reverse",
           fastScrollEnd: true,
         },
-        backgroundColor: 'rgba(11, 15, 20, 0.95)',
-        backdropFilter: 'blur(24px)',
-        borderBottomColor: 'rgba(124, 138, 153, 0.15)',
+        backgroundColor: "rgba(11, 15, 20, 0.95)",
+        backdropFilter: "blur(24px)",
+        borderBottomColor: "rgba(124, 138, 153, 0.15)",
         duration: 0.3,
-      })
-    })
+      });
+    });
 
-    return () => ctx.revert()
-  }, [])
-
-  useEffect(() => {
-    setMobileOpen(false)
-  }, [location.pathname, location.hash])
+    return () => ctx.revert();
+  }, []);
 
   useEffect(() => {
-    if (location.pathname !== '/') return
+    setMobileOpen(false);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (location.pathname !== "/") return;
 
     const updateActiveSection = () => {
-      const offset = 140
-      let current = 'home'
+      const offset = 140;
+      let current = "home";
 
       for (const id of sectionOrder) {
-        const el = document.getElementById(id)
-        if (!el) continue
+        const el = document.getElementById(id);
+        if (!el) continue;
 
-        const top = el.getBoundingClientRect().top + window.scrollY
+        const top = el.getBoundingClientRect().top + window.scrollY;
         if (window.scrollY >= top - offset) {
-          current = id
+          current = id;
         }
       }
 
-      setActiveSection(current)
-    }
+      setActiveSection(current);
+    };
 
-    updateActiveSection()
-    window.addEventListener('scroll', updateActiveSection, { passive: true })
-    window.addEventListener('resize', updateActiveSection)
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
 
     return () => {
-      window.removeEventListener('scroll', updateActiveSection)
-      window.removeEventListener('resize', updateActiveSection)
-    }
-  }, [location.pathname])
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, [location.pathname]);
 
   const handleBrandClick = (e) => {
-    e.preventDefault()
-    setMobileOpen(false)
+    e.preventDefault();
+    setMobileOpen(false);
 
-    if (location.pathname === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      setActiveSection('home')
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("home");
       if (location.hash) {
-        navigate('/', { replace: true })
+        navigate("/", { replace: true });
       }
-      return
+      return;
     }
 
-    navigate('/#home')
-  }
+    navigate("/#home");
+  };
 
   const isNavItemActive = (item) => {
-    if (item.to === '/legal') {
-      return location.pathname === '/legal'
+    if (item.to === "/legal") {
+      return location.pathname === "/legal";
     }
-    return location.pathname === '/' && activeSection === item.sectionId
-  }
+    return location.pathname === "/" && activeSection === item.sectionId;
+  };
 
   const navLinkClass = (active) =>
     `inline-flex text-sm font-medium transition-all duration-200 hover:-translate-y-[1px] ${
-      active ? 'text-white' : 'text-steel hover:text-white'
-    }`
+      active ? "text-white" : "text-steel hover:text-white"
+    }`;
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[100]">
@@ -126,20 +127,21 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-10">
             {navItems.map((item) => {
-              const active = isNavItemActive(item)
+              const active = isNavItemActive(item);
               return (
-                <Link key={item.label} to={item.to} className={navLinkClass(active)}>
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  className={navLinkClass(active)}
+                >
                   {item.label}
                 </Link>
-              )
+              );
             })}
 
-            <Button
-              className="px-5 py-2 text-[11px] uppercase tracking-[0.18em]"
-              variant="secondary"
-            >
-              Book Consultation
-            </Button>
+            <ContactUsButton className="px-5 py-2 text-[11px] uppercase tracking-[0.18em]">
+              Contact Us
+            </ContactUsButton>
           </div>
 
           <button
@@ -148,7 +150,11 @@ const Navbar = () => {
             aria-label="Toggle navigation"
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
 
@@ -164,35 +170,34 @@ const Navbar = () => {
 
                 <div className="px-3 py-3 flex flex-col">
                   {navItems.map((item) => {
-                    const active = isNavItemActive(item)
+                    const active = isNavItemActive(item);
                     return (
                       <Link
                         key={item.label}
                         to={item.to}
                         className={`flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium transition-all duration-200 ${
                           active
-                            ? 'text-white bg-cyan/10 border border-cyan/20'
-                            : 'text-steel hover:text-white hover:bg-white/[0.03] border border-transparent'
+                            ? "text-white bg-cyan/10 border border-cyan/20"
+                            : "text-steel hover:text-white hover:bg-white/[0.03] border border-transparent"
                         }`}
                       >
                         <span>{item.label}</span>
                         <span
                           className={`h-2 w-2 rounded-full transition-all duration-200 ${
-                            active ? 'bg-cyan shadow-[0_0_10px_rgba(53,208,255,0.7)]' : 'bg-transparent'
+                            active
+                              ? "bg-cyan shadow-[0_0_10px_rgba(53,208,255,0.7)]"
+                              : "bg-transparent"
                           }`}
                         />
                       </Link>
-                    )
+                    );
                   })}
                 </div>
 
                 <div className="px-5 pb-5 pt-2">
-                  <Button
-                    className="w-full px-5 py-3 text-xs uppercase tracking-[0.18em]"
-                    variant="secondary"
-                  >
-                    Book Consultation
-                  </Button>
+                  <ContactUsButton className="w-full px-5 py-3 text-xs uppercase tracking-[0.18em]">
+                    Contact Us
+                  </ContactUsButton>
                 </div>
               </div>
             </div>
@@ -200,7 +205,7 @@ const Navbar = () => {
         )}
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

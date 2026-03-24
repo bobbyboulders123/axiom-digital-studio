@@ -8,6 +8,7 @@ import {
   Mail,
   ArrowUpRight,
 } from 'lucide-react'
+import ContactUsButton from '../contact/ContactUsButton.jsx'
 
 const footerSections = [
   {
@@ -32,7 +33,7 @@ const footerSections = [
     label: 'Contact',
     links: [
       { title: 'hello@axiomdigital.com', href: 'mailto:hello@axiomdigital.com', icon: Mail },
-      { title: 'Book Consultation', href: '/#contact', icon: ArrowUpRight },
+      { title: 'Contact Us', action: 'contact-modal', icon: ArrowUpRight },
     ],
   },
 ]
@@ -100,13 +101,29 @@ const Footer = () => {
                 <ul className="space-y-3 text-[12px] sm:text-sm">
                   {section.links.map((link) => (
                     <li key={link.title}>
-                      <a
-                        href={link.href}
-                        className="inline-flex items-start gap-2 text-steel transition-colors duration-200 hover:text-white"
-                      >
-                        {link.icon ? <link.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 mt-[2px]" /> : null}
-                        <span className="break-words leading-snug">{link.title}</span>
-                      </a>
+                      {link.action === 'contact-modal' ? (
+                        <ContactUsButton
+                          variant="secondary"
+                          className="!px-0 !py-0 !bg-transparent !border-0 !shadow-none hover:!scale-100 text-steel hover:!text-white"
+                        >
+                          <span className="inline-flex items-start gap-2">
+                            {link.icon ? (
+                              <link.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 mt-[2px]" />
+                            ) : null}
+                            <span className="break-words leading-snug">{link.title}</span>
+                          </span>
+                        </ContactUsButton>
+                      ) : (
+                        <a
+                          href={link.href}
+                          className="inline-flex items-start gap-2 text-steel transition-colors duration-200 hover:text-white"
+                        >
+                          {link.icon ? (
+                            <link.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 mt-[2px]" />
+                          ) : null}
+                          <span className="break-words leading-snug">{link.title}</span>
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
