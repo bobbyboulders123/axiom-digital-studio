@@ -143,9 +143,11 @@ const Hero = () => {
             Contact Us
           </ContactUsButton>
 
-          <Button variant="secondary" className="py-4 px-10 text-lg">
-            View Protocol
-          </Button>
+          <a href="/#process">
+            <Button variant="secondary" className="py-4 px-10 text-lg">
+              View Protocol
+            </Button>
+          </a>
         </div>
       </div>
     </section>
