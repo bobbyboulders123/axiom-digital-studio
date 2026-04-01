@@ -6,7 +6,6 @@ import ContactUsButton from "../contact/ContactUsButton.jsx";
 const Hero = () => {
   const containerRef = useRef(null);
   const bgRef = useRef(null);
-  const contentRef = useRef(null);
   const headlineRef = useRef(null);
   const sublineRef = useRef(null);
   const ctaRef = useRef(null);
@@ -14,12 +13,7 @@ const Hero = () => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.set(
-        [
-          bgRef.current,
-          headlineRef.current,
-          sublineRef.current,
-          ctaRef.current,
-        ],
+        [bgRef.current, headlineRef.current, sublineRef.current, ctaRef.current],
         {
           willChange: "transform, opacity",
         },
@@ -111,43 +105,40 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#05070A] via-transparent to-transparent z-10" />
       </div>
 
-      <div
-        ref={contentRef}
-        className="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center text-center"
-        style={{ perspective: "1000px" }}
-      >
-        <h1
-          ref={headlineRef}
-          className="max-w-4xl text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] font-semibold tracking-tight text-white mb-6 drop-shadow-2xl opacity-0"
-        >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan to-electric">
-            Premium websites
-          </span>
-          <br />
-          <span>and digital experiences.</span>
-        </h1>
+      <div className="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center text-center">
+        <div ref={headlineRef} className="opacity-0">
+          <h1 className="max-w-5xl text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.02] font-semibold tracking-tight text-white mb-6 drop-shadow-2xl">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan to-electric">
+              Premium custom websites
+            </span>
+            <br />
+            <span>designed to perform.</span>
+          </h1>
+        </div>
 
         <p
           ref={sublineRef}
-          className="font-mono text-cyan uppercase tracking-widest text-sm md:text-base mb-12 flex items-center justify-center gap-4 drop-shadow-md opacity-0"
+          className="max-w-3xl text-base md:text-lg lg:text-[1.15rem] leading-8 text-white/74 mb-12 opacity-0"
         >
-          <span className="w-10 h-[1px] bg-cyan/60 block shadow-glow"></span>
-          Built with precision.
+          Axiom Digital Studio designs and builds custom websites that load fast, 
+          work beautifully on mobile, support SEO from the start, and convert better.
         </p>
 
         <div
           ref={ctaRef}
-          className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-4 opacity-0"
+          className="flex flex-col items-center gap-8 mt-2 opacity-0"
         >
-          <ContactUsButton className="py-4 px-10 text-lg">
-            Contact Us
-          </ContactUsButton>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+            <ContactUsButton className="py-4 px-10 text-lg">
+              Contact Us
+            </ContactUsButton>
 
-          <a href="/#process">
-            <Button variant="secondary" className="py-4 px-10 text-lg">
-              View Protocol
-            </Button>
-          </a>
+            <a href="/#process">
+              <Button variant="secondary" className="py-4 px-10 text-lg">
+                See the Process
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -1,28 +1,28 @@
-import React, { useEffect, useRef } from 'react'
-import { gsap } from '../../utils/gsapUtils'
+import React, { useEffect, useRef } from "react";
+import { gsap } from "../../utils/gsapUtils";
 
 const Philosophy = () => {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.from('.manifesto-text', {
+      gsap.from(".manifesto-text", {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 65%',
+          start: "top 65%",
         },
         y: 60,
         opacity: 0,
         rotationX: -10,
-        transformOrigin: '0% 0%',
+        transformOrigin: "0% 0%",
         duration: 1.5,
         stagger: 0.16,
-        ease: 'power3.out',
-      })
-    }, containerRef)
+        ease: "power3.out",
+      });
+    }, containerRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
@@ -36,8 +36,8 @@ const Philosophy = () => {
             className="h-full w-full"
             style={{
               backgroundImage:
-                'linear-gradient(rgba(124,138,153,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(124,138,153,0.14) 1px, transparent 1px)',
-              backgroundSize: '72px 72px',
+                "linear-gradient(rgba(124,138,153,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(124,138,153,0.14) 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
             }}
           />
         </div>
@@ -46,26 +46,28 @@ const Philosophy = () => {
 
       <div
         className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 gap-14 md:grid-cols-12"
-        style={{ transformStyle: 'preserve-3d' }}
+        style={{ transformStyle: "preserve-3d" }}
       >
         <div className="relative md:col-span-4 lg:col-span-5">
           <div className="md:sticky md:top-32">
             <div className="manifesto-text mb-7 inline-flex items-center gap-4">
               <div className="h-8 w-[3px] rounded-full bg-gradient-to-b from-electric via-cyan to-cyan/20" />
               <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-white/80">
-                AXIOM // MANIFESTO
+                AXIOM // OUR STANDARD
               </span>
             </div>
 
             <h2 className="manifesto-text text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
-              We engineer
+              A better standard
               <br />
-              digital instruments.
+              for the modern web.
             </h2>
 
             <p className="manifesto-text mt-6 max-w-md text-base leading-7 text-steel md:text-lg">
-              Not disposable pages. Not template noise. Structured, premium digital
-              environments built to signal quality from the first second.
+              Too many websites are rushed, templated, and never properly
+              refined. We take a more deliberate approach with clearer
+              structure, stronger messaging, careful QA, and a launch process
+              built for real-world use.
             </p>
           </div>
         </div>
@@ -79,9 +81,10 @@ const Philosophy = () => {
               </h3>
             </div>
             <p className="text-lg leading-8 text-steel md:text-xl">
-              Most digital agencies rely on recycled templates, bloated plug-ins,
-              and chaotic visuals that weaken credibility. They build disposable web
-              pages that blend into the background instead of elevating the brand.
+              Much of the industry still runs on dated templates, bloated
+              plug-ins, rushed timelines, and weak messaging. The result is a
+              website that feels generic, loads poorly, and fails to reflect the
+              real quality of the business behind it.
             </p>
           </div>
 
@@ -89,27 +92,29 @@ const Philosophy = () => {
             <div className="mb-5 flex items-center gap-3">
               <div className="h-2.5 w-2.5 rounded-full bg-cyan shadow-glow" />
               <h3 className="text-xl font-medium text-cyan md:text-2xl">
-                The Sharper Approach
+                A More Deliberate Process
               </h3>
             </div>
             <p className="text-lg leading-8 text-white md:text-xl">
-              We don&apos;t do generic. Axiom Digital Studio builds premium,
-              custom-coded environments inspired by enterprise architecture,
-              precision hardware, and modern interface systems. The result is clean,
-              fast, credible, and unmistakably high-end.
+              We approach each project with more intention: stronger structure,
+              clearer messaging, careful design decisions, and QA throughout the
+              process. Before launch, we refine, test, and pressure-check the
+              experience so the final site feels credible, smooth, and ready for
+              real visitors.
             </p>
           </div>
 
           <div className="manifesto-text relative overflow-hidden rounded-[2rem] border border-steel/20 bg-[#0B0F14]/60 p-10 shadow-[0_20px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl">
             <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-electric to-cyan shadow-glow-electric" />
             <p className="text-xl italic leading-relaxed tracking-wide text-white md:text-[1.65rem]">
-              &quot;Your website shouldn&apos;t just exist. It should be proof of your quality.&quot;
+              &quot;Your website shouldn&apos;t just exist. It should be proof
+              of your quality.&quot;
             </p>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Philosophy
+export default Philosophy;

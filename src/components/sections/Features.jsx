@@ -81,9 +81,9 @@ const Features = () => {
       }
     }, containerRef)
 
-    const fullText1 = '> INITIALIZING CORE...'
-    const fullText2 = '> BUILDING INFRASTRUCTURE...'
-    const fullText3 = '> STATUS: SECURE.'
+    const fullText1 = '> STRUCTURING CONTENT...'
+    const fullText2 = '> OPTIMIZING PERFORMANCE...'
+    const fullText3 = '> STATUS: LAUNCH READY.'
 
     let isTyping = true
     let i = 0
@@ -145,14 +145,14 @@ const Features = () => {
             </div>
 
             <h2 className="text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
-              Functional systems.
+              Designed to look premium.
               <br />
-              Premium execution.
+              Built to perform.
             </h2>
 
             <p className="mt-6 max-w-md text-base leading-7 text-steel md:text-lg">
-              Precision-engineered digital environments built for performance,
-              design, trust, and long-term credibility.
+              New websites and thoughtful redesigns built with strong design, fast performance,
+              mobile polish, SEO-ready structure, and clear paths to action.
             </p>
           </div>
         </div>
@@ -166,10 +166,11 @@ const Features = () => {
             >
               <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
                 <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
-                  Tailored Premium Design
+                  Built from the Ground Up
                 </h3>
                 <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
-                  Automated design iterations ensuring absolute visual perfection.
+                  Design from the ground up around your brand, audience, and goals
+                  so your website feels polished, credible, and distinctly yours.
                 </p>
 
                 <div className="mt-auto relative w-full h-[180px] flex items-end justify-center pb-6 rounded-[1rem]">
@@ -201,10 +202,11 @@ const Features = () => {
             >
               <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
                 <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
-                  Modern, High-Performance
+                  Strategic Website Redesign
                 </h3>
                 <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
-                  Built on next-gen architecture for maximum speed and SEO.
+                  Redesign your current website to load quickly, work smoothly across devices,
+                  and support SEO from the foundation.
                 </p>
 
                 <div className="mt-8 relative w-full h-[180px] bg-[#0B0F14] rounded-xl border border-steel/10 p-5 font-mono text-xs text-cyan/80 flex flex-col shadow-inner">
@@ -236,10 +238,11 @@ const Features = () => {
             >
               <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
                 <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
-                  Elevate Your Brand
+                  Messaging That Converts
                 </h3>
                 <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
-                  Websites programmed to build trust and scale authority.
+                  Better messaging, navigation, and calls to action will 
+                  earn trust and turn visitors into real inquiries.
                 </p>
 
                 <div className="mt-8 relative w-full h-[180px] bg-[#1B2430]/40 rounded-xl border border-steel/10 p-5">
