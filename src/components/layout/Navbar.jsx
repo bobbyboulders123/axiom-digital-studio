@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "../../utils/gsapUtils";
 import { Menu, X } from "lucide-react";
-import Button from "../ui/Button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ContactUsButton from "../contact/ContactUsButton.jsx";
 
@@ -9,10 +8,11 @@ const navItems = [
   { label: "Services", to: "/#services", sectionId: "services" },
   { label: "Proof", to: "/#proof", sectionId: "proof" },
   { label: "Process", to: "/#process", sectionId: "process" },
+  { label: "FAQ", to: "/#faq", sectionId: "faq" },
   { label: "Legal", to: "/legal", sectionId: null },
 ];
 
-const sectionOrder = ["home", "services", "proof", "process", "contact"];
+const sectionOrder = ["home", "services", "proof", "process", "faq", "contact"];
 
 const Navbar = () => {
   const navRef = useRef(null);
@@ -100,7 +100,9 @@ const Navbar = () => {
 
   const navLinkClass = (active) =>
     `inline-flex text-sm font-medium transition-all duration-200 hover:-translate-y-[1px] ${
-      active ? "text-white" : "text-steel hover:text-white"
+      active
+        ? "text-white drop-shadow-[0_0_10px_rgba(53,208,255,0.18)]"
+        : "text-steel hover:text-white"
     }`;
 
   return (
