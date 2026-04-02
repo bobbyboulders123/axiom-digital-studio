@@ -14,9 +14,9 @@ const steps = [
     phase: "Phase 01",
     title: "Discovery",
     intro:
-      "We define the technical, visual, and strategic requirements before a single interface is built.",
+      "We start with intake, direction, and strategy before a single page is designed.",
     detail:
-      "This phase aligns brand position, site architecture, conversion goals, and implementation scope so the project moves with precision instead of guesswork.",
+      "This phase helps us understand your business, brand, audience, desired feel, site goals, and content needs so the project starts with clarity instead of guesswork.",
     bgClass: "bg-[#0B0F14]",
     panelTag: "Requirements Matrix",
     image: discoveryImg,
@@ -24,9 +24,9 @@ const steps = [
       "Discovery phase workspace with clipboard, notes, and monitor glow",
     variant: "discovery",
     features: [
-      "Brand and positioning alignment",
-      "Content structure and page mapping",
-      "Technical scope and visual calibration",
+      "Intake form and brand direction",
+      "Audience, goals, and page planning",
+      "Content structure and implementation scope",
     ],
   },
   {
@@ -34,9 +34,9 @@ const steps = [
     phase: "Phase 02",
     title: "Design",
     intro:
-      "We translate strategy into a high-fidelity visual system built for trust, clarity, and premium perception.",
+      "We shape the visual direction around your brand, business type, and the experience you want clients to have.",
     detail:
-      "Every layout, motion cue, and content block is designed to feel intentional — clean in structure, refined in pacing, and unmistakably custom.",
+      "Layout, hierarchy, spacing, and visual tone are refined to feel intentional, clear, and aligned with your business rather than generic or trend-chasing.",
     bgClass: "bg-[#101720]",
     panelTag: "Interface System",
     image: designImg,
@@ -44,9 +44,9 @@ const steps = [
       "Design workstation with premium monitor showing UI wireframes and layout systems",
     variant: "design",
     features: [
-      "Interface hierarchy and composition",
-      "Premium visual language and motion",
-      "Responsive UX refinement",
+      "Brand-aligned visual direction",
+      "Layout hierarchy and content flow",
+      "Responsive design refinement",
     ],
   },
   {
@@ -54,9 +54,9 @@ const steps = [
     phase: "Phase 03",
     title: "Engineering",
     intro:
-      "We build the front-end with modern frameworks, performance discipline, and exacting implementation standards.",
+      "We turn the approved direction into a custom build with performance, responsiveness, and clean implementation in mind.",
     detail:
-      "This is where polish becomes real. The site is coded, tuned, tested, and structured to feel fast, stable, and expensive in the best way.",
+      "This is where the site is coded, refined, and checked across devices so it feels smooth, loads quickly, and holds up in real use.",
     bgClass: "bg-[#0D131B]",
     panelTag: "Build Stack",
     image: developImg,
@@ -65,8 +65,8 @@ const steps = [
     variant: "engineering",
     features: [
       "Custom front-end development",
-      "Performance and animation optimization",
-      "Reusable systems and cross-device QA",
+      "Performance and animation refinement",
+      "Cross-device QA throughout the build",
     ],
   },
   {
@@ -74,9 +74,9 @@ const steps = [
     phase: "Phase 04",
     title: "Launch",
     intro:
-      "We deploy the finished environment with final QA, production readiness checks, and post-launch polish.",
+      "We launch with final QA, production checks, and post-launch refinement.",
     detail:
-      "The result is not just a website pushed live. It is a digital instrument — tuned for credibility, clarity, and long-term use.",
+      "The result is not just a website pushed live. It is a finished experience that has been reviewed, tested, and prepared for real visitors.",
     bgClass: "bg-[#0B0F14]",
     panelTag: "Deployment Control",
     image: deployImg,
@@ -85,8 +85,8 @@ const steps = [
     variant: "launch",
     features: [
       "Production deployment and verification",
-      "Speed, accessibility, and final polish",
-      "Analytics and post-launch polish",
+      "Speed, accessibility, and final QA",
+      "Analytics and post-launch refinement",
     ],
   },
 ];
@@ -223,15 +223,15 @@ const Protocol = () => {
       timeline.to(cards.slice(1), {
         yPercent: -100,
         ease: "none",
-        stagger: 0.5,
+        stagger: 0.7,
       });
 
       const trigger = ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
-        end: `+=${cards.length * 100}%`,
+        end: `+=${cards.length * 170}%`,
         pin: true,
-        scrub: true,
+        scrub: 1.2,
         animation: timeline,
       });
 
@@ -266,7 +266,7 @@ const Protocol = () => {
         <div className="inline-flex items-center gap-4">
           <div className="h-8 w-[3px] rounded-full bg-gradient-to-b from-electric via-cyan to-cyan/20" />
           <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-white/80">
-            AXIOM // PROTOCOL
+            AXIOM // PROCESS
           </span>
         </div>
       </div>
