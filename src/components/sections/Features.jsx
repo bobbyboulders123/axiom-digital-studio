@@ -162,18 +162,18 @@ const Features = () => {
             <GlowCard
               customSize={true}
               glowColor="cyan"
-              className="group h-[360px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
+              className="group h-[430px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
             >
               <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
                 <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
                   Built from the Ground Up
                 </h3>
-                <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
+                <p className="text-steel text-base leading-7 relative transition-transform duration-500 group-hover:translate-x-2">
                   Design from the ground up around your brand, audience, and goals
                   so your website feels polished, credible, and distinctly yours.
                 </p>
 
-                <div className="mt-auto relative w-full h-[180px] flex items-end justify-center pb-6 rounded-[1rem]">
+                <div className="mt-auto relative w-full h-[145px] sm:h-[180px] flex items-end justify-center pb-6 rounded-[1rem]">
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
@@ -198,18 +198,18 @@ const Features = () => {
             <GlowCard
               customSize={true}
               glowColor="electricBlue"
-              className="group h-[360px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
+              className="group h-[430px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
             >
               <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
                 <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
                   Strategic Website Redesign
                 </h3>
-                <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
+                <p className="text-steel text-base leading-7 relative transition-transform duration-500 group-hover:translate-x-2">
                   Redesign your current website to load quickly, work smoothly across devices,
                   and support SEO from the foundation.
                 </p>
 
-                <div className="mt-8 relative w-full h-[180px] bg-[#0B0F14] rounded-xl border border-steel/10 p-5 font-mono text-xs text-cyan/80 flex flex-col shadow-inner">
+                <div className="mt-5 relative w-full h-[145px] sm:h-[180px] bg-[#0B0F14] rounded-xl border border-steel/10 p-5 font-mono text-xs text-cyan/80 flex flex-col shadow-inner">
                   <div className="flex items-center gap-3 mb-5 border-b border-steel/10 pb-3">
                     <div className="w-2 h-2 rounded-full bg-cyan animate-pulse shadow-glow"></div>
                     <span className="text-steel uppercase tracking-widest text-[10px]">
@@ -234,18 +234,18 @@ const Features = () => {
             <GlowCard
               customSize={true}
               glowColor="steel"
-              className="group h-[360px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
+              className="group h-[430px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
             >
               <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
                 <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
                   Messaging That Converts
                 </h3>
-                <p className="text-steel text-base relative transition-transform duration-500 group-hover:translate-x-2">
+                <p className="text-steel text-base leading-7 relative transition-transform duration-500 group-hover:translate-x-2">
                   Better messaging, navigation, and calls to action will 
                   earn trust and turn visitors into real inquiries.
                 </p>
 
-                <div className="mt-8 relative w-full h-[180px] bg-[#1B2430]/40 rounded-xl border border-steel/10 p-5">
+                <div className="mt-5 relative w-full h-[145px] sm:h-[180px] bg-[#1B2430]/40 rounded-xl border border-steel/10 p-5">
                   <div className="grid grid-cols-4 gap-3 h-full relative z-10">
                     {[...Array(8)].map((_, i) => (
                       <div
