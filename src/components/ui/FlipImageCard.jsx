@@ -52,6 +52,120 @@ export default function FlipImageCard({
     }
   };
 
+  const renderVisualModule = () => {
+    if (variant === "discovery") {
+      return (
+        <>
+          <div className="absolute left-2.5 right-2.5 top-2.5 h-5 rounded-xl border border-white/10 bg-white/[0.04] sm:h-7 lg:left-3 lg:right-3 lg:top-3 lg:h-9 lg:rounded-2xl" />
+          <div className="absolute bottom-2.5 left-2.5 h-4.5 w-[32%] rounded-xl border border-white/10 bg-white/[0.03] sm:h-7 lg:bottom-3 lg:left-3 lg:h-9 lg:rounded-2xl" />
+          <div className="absolute bottom-2.5 left-[38%] h-4.5 w-[18%] rounded-xl border border-cyan/20 bg-cyan/[0.05] sm:h-7 lg:bottom-3 lg:h-9 lg:rounded-2xl" />
+          <div className="absolute bottom-2.5 right-2.5 h-4.5 w-[22%] rounded-xl border border-white/10 bg-white/[0.03] sm:h-7 lg:bottom-3 lg:right-3 lg:h-9 lg:rounded-2xl" />
+        </>
+      );
+    }
+
+    if (variant === "design") {
+      return (
+        <>
+          <div className="absolute left-2.5 right-2.5 top-2.5 h-5 rounded-xl border border-white/10 bg-white/[0.04] sm:h-7 lg:left-3 lg:right-3 lg:top-3 lg:h-9 lg:rounded-2xl" />
+          <div className="absolute bottom-2.5 left-2.5 h-4.5 w-[42%] rounded-xl border border-white/10 bg-white/[0.03] sm:h-7 lg:bottom-3 lg:left-3 lg:h-9 lg:rounded-2xl" />
+          <div className="absolute bottom-2.5 right-2.5 h-4.5 w-[28%] rounded-xl border border-cyan/20 bg-cyan/[0.06] sm:h-7 lg:bottom-3 lg:right-3 lg:h-9 lg:rounded-2xl" />
+        </>
+      );
+    }
+
+    if (variant === "engineering") {
+      return (
+        <>
+          <div className="absolute left-2.5 top-2.5 h-[70%] w-[22%] rounded-xl border border-white/10 bg-white/[0.03] lg:left-3 lg:top-3 lg:rounded-2xl" />
+          <div className="absolute right-2.5 top-2.5 h-5 w-[68%] rounded-xl border border-cyan/20 bg-cyan/[0.05] sm:h-7 lg:right-3 lg:top-3 lg:h-9 lg:rounded-2xl" />
+          <div className="absolute bottom-2.5 right-2.5 h-[34%] w-[68%] rounded-xl border border-white/10 bg-white/[0.03] lg:bottom-3 lg:right-3 lg:rounded-2xl" />
+        </>
+      );
+    }
+
+    return (
+      <>
+        <div className="absolute left-2.5 right-2.5 top-2.5 h-5 rounded-xl border border-white/10 bg-white/[0.04] sm:h-7 lg:left-3 lg:right-3 lg:top-3 lg:h-9 lg:rounded-2xl" />
+        <div className="absolute bottom-2.5 left-2.5 h-4.5 w-[24%] rounded-xl border border-white/10 bg-white/[0.03] sm:h-7 lg:bottom-3 lg:left-3 lg:h-9 lg:rounded-2xl" />
+        <div className="absolute bottom-2.5 left-[32%] h-4.5 w-[20%] rounded-xl border border-white/10 bg-white/[0.03] sm:h-7 lg:bottom-3 lg:h-9 lg:rounded-2xl" />
+        <div className="absolute bottom-2.5 right-2.5 h-4.5 w-[30%] rounded-xl border border-cyan/20 bg-cyan/[0.06] sm:h-7 lg:bottom-3 lg:right-3 lg:h-9 lg:rounded-2xl" />
+      </>
+    );
+  };
+
+  const renderSystemNotes = () => {
+    if (variant === "discovery") {
+      return (
+        <div className="space-y-1 sm:space-y-2">
+          <div className="h-1.5 w-[86%] rounded-full bg-white/10 sm:h-2" />
+          <div className="h-1.5 w-[62%] rounded-full bg-white/10 sm:h-2" />
+          <div className="h-1.5 w-[48%] rounded-full bg-cyan/20 sm:h-2" />
+        </div>
+      );
+    }
+
+    if (variant === "design") {
+      return (
+        <div className="space-y-1 sm:space-y-2">
+          <div className="h-1.5 w-[82%] rounded-full bg-white/10 sm:h-2" />
+          <div className="h-1.5 w-[68%] rounded-full bg-white/10 sm:h-2" />
+          <div className="h-1.5 w-[54%] rounded-full bg-cyan/20 sm:h-2" />
+        </div>
+      );
+    }
+
+    if (variant === "engineering") {
+      return (
+        <div className="space-y-1 sm:space-y-2">
+          <div className="h-1.5 w-[74%] rounded-full bg-white/10 sm:h-2" />
+          <div className="h-1.5 w-[58%] rounded-full bg-white/10 sm:h-2" />
+          <div className="h-1.5 w-[66%] rounded-full bg-cyan/20 sm:h-2" />
+        </div>
+      );
+    }
+
+    return (
+      <div className="space-y-1 sm:space-y-2">
+        <div className="h-1.5 w-[88%] rounded-full bg-white/10 sm:h-2" />
+        <div className="h-1.5 w-[72%] rounded-full bg-white/10 sm:h-2" />
+        <div className="h-1.5 w-[60%] rounded-full bg-cyan/20 sm:h-2" />
+      </div>
+    );
+  };
+
+  const renderStatusBars = () => {
+    const barSets = {
+      discovery: ["32%", "48%", "66%", "82%"],
+      design: ["38%", "54%", "70%", "86%"],
+      engineering: ["28%", "46%", "74%", "90%"],
+      launch: ["40%", "58%", "76%", "94%"],
+    };
+
+    const bars = barSets[variant] || barSets.discovery;
+
+    return (
+      <div className="flex h-[26px] w-full items-end justify-center gap-1 sm:h-[34px] sm:gap-2 lg:h-[44px]">
+        {bars.map((height, index) => {
+          const colorClass =
+            index < 2
+              ? "bg-white/10"
+              : index === 2
+                ? "bg-cyan/50"
+                : "bg-electric/70";
+
+          return (
+            <div
+              key={`${variant}-${index}`}
+              className={`w-2 rounded-t-[3px] rounded-b-none sm:w-3 ${colorClass}`}
+              style={{ height }}
+            />
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <div
       className="group relative w-full [perspective:2000px]"
@@ -171,9 +285,7 @@ export default function FlipImageCard({
 
                   <div className="relative h-[62px] overflow-hidden rounded-[0.85rem] border border-white/8 bg-[linear-gradient(135deg,#0d131b_0%,#0f1722_35%,#101a27_100%)] sm:h-[72px] lg:h-28 lg:rounded-[0.9rem]">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(53,208,255,0.16),transparent_22%),radial-gradient(circle_at_80%_75%,rgba(47,128,237,0.16),transparent_20%)]" />
-                    <div className="absolute left-2.5 right-2.5 top-2.5 h-5 rounded-xl border border-white/10 bg-white/[0.04] sm:h-7 lg:left-3 lg:right-3 lg:top-3 lg:h-9 lg:rounded-2xl" />
-                    <div className="absolute bottom-2.5 left-2.5 h-4.5 w-[42%] rounded-xl border border-white/10 bg-white/[0.03] sm:h-7 lg:bottom-3 lg:left-3 lg:h-9 lg:rounded-2xl" />
-                    <div className="absolute bottom-2.5 right-2.5 h-4.5 w-[28%] rounded-xl border border-cyan/20 bg-cyan/[0.06] sm:h-7 lg:bottom-3 lg:right-3 lg:h-9 lg:rounded-2xl" />
+                    {renderVisualModule()}
                     <div className="absolute bottom-2.5 left-2.5 right-2.5 h-px bg-gradient-to-r from-transparent via-cyan/50 to-transparent lg:bottom-3 lg:left-3 lg:right-3" />
                   </div>
                 </div>
@@ -183,23 +295,14 @@ export default function FlipImageCard({
                     <div className="mb-1 font-mono text-[7px] uppercase tracking-[0.18em] text-white/45 sm:mb-2 sm:text-[9px] sm:tracking-[0.22em] lg:text-[9px] lg:tracking-[0.24em]">
                       System Notes
                     </div>
-                    <div className="space-y-1 sm:space-y-2">
-                      <div className="h-1.5 w-[82%] rounded-full bg-white/10 sm:h-2" />
-                      <div className="h-1.5 w-[68%] rounded-full bg-white/10 sm:h-2" />
-                      <div className="h-1.5 w-[54%] rounded-full bg-cyan/20 sm:h-2" />
-                    </div>
+                    {renderSystemNotes()}
                   </div>
 
                   <div className="rounded-[0.75rem] border border-white/10 bg-[#0B0F14]/70 p-2 sm:rounded-[0.95rem] sm:p-3">
                     <div className="mb-1 font-mono text-[7px] uppercase tracking-[0.18em] text-white/45 sm:mb-2 sm:text-[9px] sm:tracking-[0.22em] lg:text-[9px] lg:tracking-[0.24em]">
                       Status
                     </div>
-                    <div className="flex h-[26px] items-center gap-1 sm:h-[34px] sm:gap-2 lg:h-[44px]">
-                      <div className="h-[38%] w-2 rounded-t-full bg-white/10 sm:w-3" />
-                      <div className="h-[54%] w-2 rounded-t-full bg-white/10 sm:w-3" />
-                      <div className="h-[70%] w-2 rounded-t-full bg-cyan/50 sm:w-3" />
-                      <div className="h-[86%] w-2 rounded-t-full bg-electric/70 sm:w-3" />
-                    </div>
+                    {renderStatusBars()}
                   </div>
                 </div>
               </div>
