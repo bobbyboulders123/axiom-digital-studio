@@ -32,7 +32,11 @@ const footerSections = [
   {
     label: 'Contact',
     links: [
-      { title: 'hello@axiomdigital.com', href: 'mailto:hello@axiomdigital.com', icon: Mail },
+      {
+        title: 'hello@axiomdigital.studio',
+        href: 'mailto:hello@axiomdigital.studio',
+        icon: Mail,
+      },
       { title: 'Contact Us', action: 'contact-modal', icon: ArrowUpRight },
     ],
   },
@@ -60,26 +64,27 @@ function AnimatedContainer({ className = '', delay = 0.1, children }) {
 
 const Footer = () => {
   return (
-    <footer className="relative px-4 sm:px-6 pb-8 pt-0 bg-[#0B0F14]">
-      <div className="max-w-6xl mx-auto rounded-t-[2rem] md:rounded-t-[3rem] border-t border-steel/15 bg-[radial-gradient(35%_140px_at_50%_0%,rgba(255,255,255,0.06),transparent)] px-5 py-10 sm:px-6 md:px-8 lg:px-10 lg:py-16">
-        <div className="bg-cyan/20 absolute left-1/2 top-0 h-px w-1/3 -translate-x-1/2 rounded-full blur" />
+    <footer className="relative bg-[#0B0F14] px-4 pt-0 pb-8 sm:px-6">
+      <div className="mx-auto max-w-6xl rounded-t-[2rem] border-t border-steel/15 bg-[radial-gradient(35%_140px_at_50%_0%,rgba(255,255,255,0.06),transparent)] px-5 py-10 md:rounded-t-[3rem] sm:px-6 md:px-8 lg:px-10 lg:py-16">
+        <div className="absolute top-0 left-1/2 h-px w-1/3 -translate-x-1/2 rounded-full bg-cyan/20 blur" />
 
         <div className="grid gap-10 xl:grid-cols-3 xl:gap-12">
           <AnimatedContainer className="space-y-6" delay={0.1}>
-            <a href="/#home" className="inline-flex items-center gap-3 group">
+            <a href="/#home" className="group inline-flex items-center gap-3">
               <img
                 src="/brand/axiom-symbol.png"
                 alt="Axiom Symbol"
                 className="h-7 w-auto mix-blend-screen transition-transform duration-200 group-hover:scale-[1.02]"
               />
-              <span className="text-xl sm:text-2xl font-semibold tracking-tight text-white">
+              <span className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
                 Axiom Digital Studio
               </span>
             </a>
 
-            <p className="text-steel text-sm sm:text-base leading-relaxed max-w-md">
-              Premium websites and digital experiences for businesses that want a
-              sharper, more credible online presence built with precision.
+            <p className="max-w-md text-sm leading-relaxed text-steel sm:text-base">
+              Custom websites and thoughtful redesigns for businesses that want
+              clearer messaging, smoother navigation, stronger credibility, and
+              a sharper online presence.
             </p>
 
             <p className="text-sm text-steel/80">
@@ -87,14 +92,14 @@ const Footer = () => {
             </p>
           </AnimatedContainer>
 
-          <div className="grid grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-3 xl:col-span-2">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 xl:col-span-2">
             {footerSections.map((section, index) => (
               <AnimatedContainer
                 key={section.label}
                 delay={0.15 + index * 0.08}
                 className="min-w-0"
               >
-                <h3 className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/90 mb-4">
+                <h3 className="mb-4 text-[10px] uppercase tracking-[0.18em] text-white/90 sm:text-xs">
                   {section.label}
                 </h3>
 
@@ -104,11 +109,11 @@ const Footer = () => {
                       {link.action === 'contact-modal' ? (
                         <ContactUsButton
                           variant="secondary"
-                          className="!px-0 !py-0 !bg-transparent !border-0 !shadow-none hover:!scale-100 text-steel hover:!text-white"
+                          className="!border-0 !bg-transparent !px-0 !py-0 !shadow-none text-steel hover:!scale-100 hover:!text-white"
                         >
                           <span className="inline-flex items-start gap-2">
                             {link.icon ? (
-                              <link.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 mt-[2px]" />
+                              <link.icon className="mt-[2px] h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
                             ) : null}
                             <span className="break-words leading-snug">{link.title}</span>
                           </span>
@@ -119,7 +124,7 @@ const Footer = () => {
                           className="inline-flex items-start gap-2 text-steel transition-colors duration-200 hover:text-white"
                         >
                           {link.icon ? (
-                            <link.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 mt-[2px]" />
+                            <link.icon className="mt-[2px] h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
                           ) : null}
                           <span className="break-words leading-snug">{link.title}</span>
                         </a>
