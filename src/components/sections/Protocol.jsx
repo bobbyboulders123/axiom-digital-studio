@@ -150,6 +150,8 @@ function MobileCard({ step }) {
 }
 
 function DesktopCard({ step, index, cardsRef }) {
+  const isReversed = index % 2 === 1;
+
   return (
     <article
       ref={(el) => (cardsRef.current[index] = el)}
@@ -161,7 +163,7 @@ function DesktopCard({ step, index, cardsRef }) {
     >
       <div className="relative flex h-full items-center px-6 pt-28 pb-12 md:px-10 lg:px-16">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
-          <div className="relative">
+          <div className={`relative ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
             <div className="mb-6 flex items-center gap-4">
               <span className="font-mono text-sm uppercase tracking-[0.28em] text-cyan">
                 {step.phase}
@@ -195,14 +197,16 @@ function DesktopCard({ step, index, cardsRef }) {
             </div>
           </div>
 
-          <FlipImageCard
-            title={step.title}
-            label={step.panelTag}
-            image={step.image}
-            imageAlt={step.imageAlt}
-            features={step.features}
-            variant={step.variant}
-          />
+          <div className={isReversed ? "lg:order-1" : "lg:order-2"}>
+            <FlipImageCard
+              title={step.title}
+              label={step.panelTag}
+              image={step.image}
+              imageAlt={step.imageAlt}
+              features={step.features}
+              variant={step.variant}
+            />
+          </div>
         </div>
       </div>
     </article>
