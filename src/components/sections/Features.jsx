@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from '../../utils/gsapUtils'
+import SectionHeader from '../ui/SectionHeader'
 import { GlowCard } from '../ui/spotlight-card'
 
 const Features = () => {
@@ -137,23 +138,15 @@ const Features = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 relative z-10">
         <div className="md:col-span-5 relative">
           <div className="md:sticky md:top-[35vh]">
-            <div className="mb-7 inline-flex items-center gap-4">
-              <div className="h-8 w-[3px] rounded-full bg-gradient-to-b from-electric via-cyan to-cyan/20" />
-              <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-white/80">
-                AXIOM // SERVICES
-              </span>
-            </div>
-
-            <h2 className="text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
+            <SectionHeader
+              index="01"
+              label="Axiom Services"
+              description="New websites and thoughtful redesigns built with strong design, fast performance, mobile polish, SEO-ready structure, and clear paths to action."
+            >
               Designed to look premium.
               <br />
               Built to perform.
-            </h2>
-
-            <p className="mt-6 max-w-md text-base leading-7 text-steel md:text-lg">
-              New websites and thoughtful redesigns built with strong design, fast performance,
-              mobile polish, SEO-ready structure, and clear paths to action.
-            </p>
+            </SectionHeader>
           </div>
         </div>
 

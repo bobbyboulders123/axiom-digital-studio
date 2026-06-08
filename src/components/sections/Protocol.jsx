@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "../../utils/gsapUtils";
 
 import FlipImageCard from "../ui/FlipImageCard";
+import SectionHeader from "../ui/SectionHeader";
 
 import discoveryImg from "../../assets/process/discovery.png";
 import designImg from "../../assets/process/design.png";
@@ -263,12 +264,11 @@ const Protocol = () => {
       </div>
 
       <div className="relative z-20 mx-auto w-full max-w-6xl px-6 pt-20 pb-8 md:px-10 lg:absolute lg:top-10 lg:left-1/2 lg:-translate-x-1/2 lg:pt-0 lg:pb-0">
-        <div className="inline-flex items-center gap-4">
-          <div className="h-8 w-[3px] rounded-full bg-gradient-to-b from-electric via-cyan to-cyan/20" />
-          <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-white/80">
-            AXIOM // PROCESS
-          </span>
-        </div>
+        <SectionHeader
+          index="03"
+          label="Axiom Process"
+          variant="labelOnly"
+        />
       </div>
 
       <div className="relative z-10 px-4 pb-16 md:px-6 lg:hidden">

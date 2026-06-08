@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "../../utils/gsapUtils";
+import SectionHeader from "../ui/SectionHeader";
 
 const Philosophy = () => {
   const containerRef = useRef(null);
@@ -50,12 +51,12 @@ const Philosophy = () => {
       >
         <div className="relative md:col-span-4 lg:col-span-5">
           <div className="md:sticky md:top-32">
-            <div className="manifesto-text mb-7 inline-flex items-center gap-4">
-              <div className="h-8 w-[3px] rounded-full bg-gradient-to-b from-electric via-cyan to-cyan/20" />
-              <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-white/80">
-                AXIOM // OUR STANDARD
-              </span>
-            </div>
+            <SectionHeader
+              index="02"
+              label="Axiom Standard"
+              variant="labelOnly"
+              className="manifesto-text mb-7"
+            />
 
             <h2 className="manifesto-text text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
               A better standard

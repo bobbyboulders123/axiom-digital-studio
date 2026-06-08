@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import SectionHeader from "../ui/SectionHeader";
 
 const faqs = [
   {
@@ -96,23 +97,15 @@ const FaqSection = () => {
       <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-12 md:gap-14">
         <div className="md:col-span-4 lg:col-span-5">
           <div className="md:sticky md:top-28">
-            <div className="mb-7 inline-flex items-center gap-4">
-              <div className="h-8 w-[3px] rounded-full bg-gradient-to-b from-electric via-cyan to-cyan/20" />
-              <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-white/80">
-                AXIOM // FAQ
-              </span>
-            </div>
-
-            <h2 className="text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
+            <SectionHeader
+              index="04"
+              label="Axiom FAQ"
+              description="A few of the things clients usually want to know before starting a new website or redesign."
+            >
               Questions,
               <br />
               answered clearly.
-            </h2>
-
-            <p className="mt-6 max-w-md text-base leading-7 text-steel md:text-lg">
-              A few of the things clients usually want to know before starting
-              a new website or redesign.
-            </p>
+            </SectionHeader>
           </div>
         </div>
 
