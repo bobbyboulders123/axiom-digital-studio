@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import GlobalNoise from "./components/ui/GlobalNoise";
 import Navbar from "./components/layout/Navbar";
@@ -11,6 +11,8 @@ import FaqSection from "./components/sections/FaqSection";
 import CtaSection from "./components/sections/CtaSection";
 import LegalPage from "./pages/LegalPage";
 import Preloader from "./components/ui/Preloader";
+
+const LabPage = lazy(() => import("./pages/LabPage"));
 
 function ScrollToHash() {
   const location = useLocation();
@@ -75,10 +77,13 @@ function App() {
   return (
     <>
       <ScrollToHash />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/legal" element={<LegalPage />} />
-      </Routes>
+      <Suspense fallback={<Preloader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/legal" element={<LegalPage />} />
+          <Route path="/lab" element={<LabPage />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }
