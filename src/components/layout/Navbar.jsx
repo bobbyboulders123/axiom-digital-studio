@@ -8,6 +8,7 @@ const navItems = [
   { label: "Services", to: "/#services", sectionId: "services" },
   { label: "Standard", to: "/#standard", sectionId: "standard" },
   { label: "Process", to: "/#process", sectionId: "process" },
+  { label: "Lab", to: "/lab", sectionId: null },
   { label: "FAQ", to: "/#faq", sectionId: "faq" },
   { label: "Legal", to: "/legal", sectionId: null },
 ];
@@ -92,10 +93,11 @@ const Navbar = () => {
   };
 
   const isNavItemActive = (item) => {
-    if (item.to === "/legal") {
-      return location.pathname === "/legal";
+    if (item.sectionId) {
+      return location.pathname === "/" && activeSection === item.sectionId;
     }
-    return location.pathname === "/" && activeSection === item.sectionId;
+
+    return location.pathname === item.to;
   };
 
   const navLinkClass = (active) =>

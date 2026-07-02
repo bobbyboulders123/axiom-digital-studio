@@ -17,6 +17,7 @@ const footerSections = [
       { title: 'Services', href: '/#services' },
       { title: 'Standard', href: '/#standard' },
       { title: 'Process', href: '/#process' },
+      { title: 'Lab', href: '/lab' },
       { title: 'Legal', href: '/legal' },
     ],
   },
