@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "Do you factor in mobile, performance, and SEO?",
     answer:
-      "Yes. Mobile polish, fast load times, clear structure, and SEO-ready foundations are part of the process from the start. A good website should not only look better — it should work better too.",
+      "Yes. Mobile polish, fast load times, clear structure, and SEO-ready foundations are part of the process from the start. A good website should not only look better, it should work better too.",
   },
   {
     question: "How do you figure out the right direction for a project?",
