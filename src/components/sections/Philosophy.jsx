@@ -27,7 +27,7 @@ const Philosophy = () => {
 
   return (
     <section
-      id="proof"
+      id="standard"
       ref={containerRef}
       className="relative overflow-hidden border-y border-steel/10 bg-[#121A24] px-6 py-28 md:py-32"
     >

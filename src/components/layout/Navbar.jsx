@@ -6,13 +6,13 @@ import ContactUsButton from "../contact/ContactUsButton.jsx";
 
 const navItems = [
   { label: "Services", to: "/#services", sectionId: "services" },
-  { label: "Proof", to: "/#proof", sectionId: "proof" },
+  { label: "Standard", to: "/#standard", sectionId: "standard" },
   { label: "Process", to: "/#process", sectionId: "process" },
   { label: "FAQ", to: "/#faq", sectionId: "faq" },
   { label: "Legal", to: "/legal", sectionId: null },
 ];
 
-const sectionOrder = ["home", "services", "proof", "process", "faq", "contact"];
+const sectionOrder = ["home", "services", "standard", "process", "faq", "contact"];
 
 const Navbar = () => {
   const navRef = useRef(null);

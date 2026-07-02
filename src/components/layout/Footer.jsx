@@ -15,7 +15,7 @@ const footerSections = [
     label: 'Navigation',
     links: [
       { title: 'Services', href: '/#services' },
-      { title: 'Proof', href: '/#proof' },
+      { title: 'Standard', href: '/#standard' },
       { title: 'Process', href: '/#process' },
       { title: 'Legal', href: '/legal' },
     ],
