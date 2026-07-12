@@ -9,6 +9,9 @@ const Features = () => {
   const shufflerCardsRef = useRef([])
   const cursorRef = useRef(null)
   const targetAreaRef = useRef(null)
+  const brandMarkRefs = useRef([])
+  const brandWordmarkRef = useRef(null)
+  const brandSwatchRefs = useRef([])
 
   const [typedText, setTypedText] = useState({ line1: '', line2: '', line3: '' })
 
@@ -37,6 +40,43 @@ const Features = () => {
             ease: 'power2.inOut',
           })
       })
+
+      const brandMarkParts = brandMarkRefs.current.filter(Boolean)
+      const brandSwatches = brandSwatchRefs.current.filter(Boolean)
+
+      if (brandMarkParts.length && brandWordmarkRef.current && brandSwatches.length) {
+        const brandTl = gsap.timeline({ repeat: -1, repeatDelay: 0.75 })
+
+        brandTl
+          .set(brandMarkParts, { opacity: 0, scale: 0.78, transformOrigin: '50% 50%' })
+          .set(brandWordmarkRef.current, { opacity: 0, y: 8 })
+          .set(brandSwatches, { opacity: 0.3, scale: 0.82, transformOrigin: '50% 50%' })
+          .to(brandMarkParts, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.55,
+            stagger: 0.16,
+            ease: 'power3.out',
+          })
+          .to(
+            brandWordmarkRef.current,
+            { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' },
+            '-=0.2'
+          )
+          .to(brandSwatches, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.3,
+            stagger: 0.2,
+            ease: 'power2.out',
+          })
+          .to({}, { duration: 2.25 })
+          .to([brandWordmarkRef.current, ...brandMarkParts, ...brandSwatches], {
+            opacity: 0,
+            duration: 0.45,
+            ease: 'power2.inOut',
+          })
+      }
 
       if (cursorRef.current && targetAreaRef.current) {
         const cursorTl = gsap.timeline({ repeat: -1, repeatDelay: 1 })
@@ -133,15 +173,15 @@ const Features = () => {
     <section
       id="services"
       ref={containerRef}
-      className="py-24 md:py-32 px-6 bg-[#0B0F14] relative z-20 overflow-x-hidden"
+      className="py-24 md:py-32 px-6 bg-[#0B0F14] relative z-20 overflow-visible"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 relative z-10">
         <div className="md:col-span-5 relative">
-          <div className="md:sticky md:top-[35vh]">
+          <div className="md:sticky md:top-28">
             <SectionHeader
               index="01"
               label="Axiom Services"
-              description="New websites and thoughtful redesigns built with strong design, fast performance, mobile polish, SEO-ready structure, and clear paths to action."
+              description="New websites, brand identity, and thoughtful redesigns built with strong design, fast performance, mobile polish, SEO-ready structure, and clear paths to action."
             >
               Designed to look premium.
               <br />
@@ -150,7 +190,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="md:col-span-7 space-y-8 md:space-y-12">
+        <div className="md:col-span-7 space-y-8 md:space-y-12 overflow-x-clip">
           <div className="touch-pan-y" style={{ touchAction: 'pan-y' }}>
             <GlowCard
               customSize={true}
@@ -182,6 +222,107 @@ const Features = () => {
                       </div>
                     </div>
                   ))}
+                </div>
+              </div>
+            </GlowCard>
+          </div>
+
+          <div className="touch-pan-y" style={{ touchAction: 'pan-y' }}>
+            <GlowCard
+              customSize={true}
+              glowColor="ice"
+              className="group h-[430px] md:h-[400px] transition-transform duration-500 hover:-translate-y-2 pointer-events-none md:pointer-events-auto"
+            >
+              <div className="relative z-10 h-full rounded-[1.25rem] flex flex-col">
+                <h3 className="text-white font-medium text-2xl mb-3 relative transition-transform duration-500 group-hover:translate-x-2">
+                  Logo Design &amp; Brand Identity
+                </h3>
+                <p className="text-steel text-base leading-7 relative transition-transform duration-500 group-hover:translate-x-2">
+                  Build a cleaner visual foundation with logo marks, color direction,
+                  typography, and brand elements that make your website feel more complete
+                  and credible.
+                </p>
+
+                <div className="mt-auto relative w-full h-[145px] sm:h-[180px] bg-[#0B0F14]/70 rounded-xl border border-steel/10 p-4 shadow-inner overflow-hidden">
+                  <svg
+                    className="w-full h-full"
+                    viewBox="0 0 460 150"
+                    role="img"
+                    aria-label="Animated brand identity system preview"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g transform="translate(30 19)">
+                      <rect
+                        width="112"
+                        height="112"
+                        rx="22"
+                        fill="#1B2430"
+                        stroke="rgba(124, 138, 153, 0.25)"
+                      />
+                      <path
+                        ref={(el) => (brandMarkRefs.current[0] = el)}
+                        d="M25 80L54 30L67 53L51 80H25Z"
+                        fill="#35D0FF"
+                      />
+                      <path
+                        ref={(el) => (brandMarkRefs.current[1] = el)}
+                        d="M58 80L78 45L96 80H58Z"
+                        fill="#E7F7FF"
+                        opacity="0.92"
+                      />
+                      <rect
+                        ref={(el) => (brandMarkRefs.current[2] = el)}
+                        x="47"
+                        y="87"
+                        width="43"
+                        height="5"
+                        rx="2.5"
+                        fill="#547CFF"
+                      />
+                    </g>
+
+                    <g ref={brandWordmarkRef} transform="translate(176 40)">
+                      <text
+                        fill="#F7FBFF"
+                        fontFamily="ui-sans-serif, system-ui, sans-serif"
+                        fontSize="20"
+                        fontWeight="600"
+                        letterSpacing="3"
+                      >
+                        AXIOM
+                      </text>
+                      <text
+                        y="25"
+                        fill="#7C8A99"
+                        fontFamily="ui-monospace, SFMono-Regular, monospace"
+                        fontSize="9"
+                        letterSpacing="2"
+                      >
+                        IDENTITY SYSTEM
+                      </text>
+                      <line
+                        x1="0"
+                        y1="41"
+                        x2="210"
+                        y2="41"
+                        stroke="rgba(124, 138, 153, 0.2)"
+                      />
+                    </g>
+
+                    <g transform="translate(176 102)">
+                      {['#35D0FF', '#547CFF', '#E7F7FF'].map((color, i) => (
+                        <rect
+                          key={color}
+                          ref={(el) => (brandSwatchRefs.current[i] = el)}
+                          x={i * 44}
+                          width="30"
+                          height="30"
+                          rx="8"
+                          fill={color}
+                        />
+                      ))}
+                    </g>
+                  </svg>
                 </div>
               </div>
             </GlowCard>
