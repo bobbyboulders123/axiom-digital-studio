@@ -4,6 +4,8 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import GlobalNoise from "../components/ui/GlobalNoise";
 import ContactUsButton from "../components/contact/ContactUsButton.jsx";
+import LabGrid from "../components/lab/LabGrid.jsx";
+import { labDemos } from "../data/labDemos.js";
 
 const LabPage = () => {
   return (
@@ -45,19 +47,20 @@ const LabPage = () => {
               </p>
             </div>
 
-            <div className="mt-16 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.35)] backdrop-blur-sm md:p-10">
-              <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <section className="mt-16">
+              <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
                 <div className="max-w-2xl">
                   <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-cyan">
-                    First experiments in progress
+                    Curated capability studies
                   </p>
                   <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white md:text-3xl">
-                    The workbench is being prepared.
+                    Early demos for practical, high-polish web experiences.
                   </h2>
-                  <p className="mt-4 leading-7 text-steel">
-                    Early studies will focus on purposeful motion, responsive
-                    interaction, and visual systems built for real web
-                    experiences.
+                  <p className="mt-4 max-w-3xl leading-7 text-steel">
+                    Each entry is a concept study for a specific capability:
+                    motion, interaction, visual refinement, or conversion flow
+                    design. The collection is curated as a working lab, not a
+                    gallery of client results.
                   </p>
                 </div>
 
@@ -73,7 +76,9 @@ const LabPage = () => {
                   </ContactUsButton>
                 </div>
               </div>
-            </div>
+
+              <LabGrid demos={labDemos} />
+            </section>
           </div>
         </section>
       </main>
