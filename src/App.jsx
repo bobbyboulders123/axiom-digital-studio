@@ -13,6 +13,9 @@ import LegalPage from "./pages/LegalPage";
 import Preloader from "./components/ui/Preloader";
 
 const LabPage = lazy(() => import("./pages/LabPage"));
+const ConversionCtaSystemDemo = lazy(
+  () => import("./pages/lab/ConversionCtaSystemDemo")
+);
 
 function ScrollToHash() {
   const location = useLocation();
@@ -82,6 +85,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/legal" element={<LegalPage />} />
           <Route path="/lab" element={<LabPage />} />
+          <Route
+            path="/lab/conversion-cta-system"
+            element={<ConversionCtaSystemDemo />}
+          />
         </Routes>
       </Suspense>
     </>
