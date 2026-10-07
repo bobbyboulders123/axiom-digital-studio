@@ -1,8 +1,15 @@
 import React from "react";
 import SelectionGroup from "./SelectionGroup.jsx";
-import { goalIds, goals, layouts } from "../conversionCtaData.js";
+import { goalIds, goals, layouts, themes } from "../conversionCtaData.js";
 
-const ControlPanel = ({ goal, layout, onGoalChange, onLayoutChange }) => {
+const ControlPanel = ({
+  goal,
+  layout,
+  theme,
+  onGoalChange,
+  onLayoutChange,
+  onThemeChange,
+}) => {
   return (
     <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-5 md:p-6">
       <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-cyan">
@@ -31,6 +38,12 @@ const ControlPanel = ({ goal, layout, onGoalChange, onLayoutChange }) => {
           options={layouts}
           value={layout}
           onChange={onLayoutChange}
+        />
+        <SelectionGroup
+          label="Preview theme"
+          options={themes}
+          value={theme}
+          onChange={onThemeChange}
         />
       </div>
     </div>

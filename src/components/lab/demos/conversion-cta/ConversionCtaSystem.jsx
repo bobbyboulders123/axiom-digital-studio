@@ -6,6 +6,7 @@ import { goals } from "./conversionCtaData.js";
 const ConversionCtaSystem = () => {
   const [goal, setGoal] = useState("call");
   const [layout, setLayout] = useState("hero");
+  const [theme, setTheme] = useState("dark");
   const activeConfig = useMemo(() => goals[goal], [goal]);
 
   return (
@@ -17,10 +18,17 @@ const ConversionCtaSystem = () => {
         <ControlPanel
           goal={goal}
           layout={layout}
+          theme={theme}
           onGoalChange={setGoal}
           onLayoutChange={setLayout}
+          onThemeChange={setTheme}
         />
-        <PreviewFrame goal={goal} layout={layout} config={activeConfig} />
+        <PreviewFrame
+          goal={goal}
+          layout={layout}
+          theme={theme}
+          config={activeConfig}
+        />
       </div>
     </section>
   );
