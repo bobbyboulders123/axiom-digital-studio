@@ -91,7 +91,6 @@ const FaqSection = () => {
             backgroundSize: "72px 72px",
           }}
         />
-        <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan/10 blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-12 md:gap-14">
