@@ -38,7 +38,7 @@ const heroStyles = {
   },
 };
 
-const HeroCtaPreview = ({ config, theme }) => {
+const HeroCtaPreview = ({ config, theme, buttonStyle }) => {
   const Icon = config.icon;
   const styles = heroStyles[theme] ?? heroStyles.dark;
 
@@ -66,7 +66,7 @@ const HeroCtaPreview = ({ config, theme }) => {
             {config.copy}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <PrimaryAction theme={theme}>{config.primaryCta}</PrimaryAction>
+            <PrimaryAction theme={theme} buttonStyle={buttonStyle}>{config.primaryCta}</PrimaryAction>
             <SecondaryAction
               className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 motion-reduce:transition-none ${styles.secondary}`}
             >

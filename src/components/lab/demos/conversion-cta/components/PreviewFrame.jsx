@@ -21,7 +21,7 @@ const labelStyles = {
   },
 };
 
-const PreviewFrame = ({ goal, layout, theme, config }) => {
+const PreviewFrame = ({ goal, layout, theme, config, buttonStyle }) => {
   const styles = labelStyles[theme] ?? labelStyles.dark;
 
   return (
@@ -45,9 +45,9 @@ const PreviewFrame = ({ goal, layout, theme, config }) => {
       </div>
 
       {layout === "hero" ? (
-        <HeroCtaPreview config={config} theme={theme} />
+        <HeroCtaPreview config={config} theme={theme} buttonStyle={buttonStyle} />
       ) : (
-        <CardCtaPreview config={config} theme={theme} />
+        <CardCtaPreview config={config} theme={theme} buttonStyle={buttonStyle} />
       )}
     </div>
   );

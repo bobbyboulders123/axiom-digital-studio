@@ -44,6 +44,11 @@ export const layouts = [
   { id: "card", label: "Card CTA" },
 ];
 
+export const buttonStyles = [
+  { id: "flow", label: "Flow" },
+  { id: "shiny", label: "Shiny" },
+];
+
 export const themes = [
   { id: "light", label: "Light" },
   { id: "dark", label: "Dark" },

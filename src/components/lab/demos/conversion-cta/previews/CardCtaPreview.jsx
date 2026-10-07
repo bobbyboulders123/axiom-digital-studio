@@ -34,7 +34,7 @@ const cardStyles = {
   },
 };
 
-const CardCtaPreview = ({ config, theme }) => {
+const CardCtaPreview = ({ config, theme, buttonStyle }) => {
   const Icon = config.icon;
   const styles = cardStyles[theme] ?? cardStyles.dark;
 
@@ -77,7 +77,7 @@ const CardCtaPreview = ({ config, theme }) => {
         </div>
 
         <div className="mt-7 grid gap-3 sm:grid-cols-[1fr_auto]">
-          <PrimaryAction theme={theme}>{config.primaryCta}</PrimaryAction>
+          <PrimaryAction theme={theme} buttonStyle={buttonStyle}>{config.primaryCta}</PrimaryAction>
           <SecondaryAction
             className={`inline-flex min-h-12 items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 motion-reduce:transition-none ${styles.secondary}`}
           >

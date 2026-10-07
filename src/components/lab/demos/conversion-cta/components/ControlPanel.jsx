@@ -1,12 +1,14 @@
 import React from "react";
 import SelectionGroup from "./SelectionGroup.jsx";
 import ThemeSwitcher from "../pasted/controls/ThemeSwitcher.jsx";
-import { goalIds, goals, layouts } from "../conversionCtaData.js";
+import { buttonStyles, goalIds, goals, layouts } from "../conversionCtaData.js";
 
 const ControlPanel = ({
   goal,
   layout,
   theme,
+  buttonStyle,
+  onButtonStyleChange,
   onGoalChange,
   onLayoutChange,
   onThemeChange,
@@ -39,6 +41,12 @@ const ControlPanel = ({
           options={layouts}
           value={layout}
           onChange={onLayoutChange}
+        />
+        <SelectionGroup
+          label="Button style"
+          options={buttonStyles}
+          value={buttonStyle}
+          onChange={onButtonStyleChange}
         />
         <div>
           <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.24em] text-cyan">

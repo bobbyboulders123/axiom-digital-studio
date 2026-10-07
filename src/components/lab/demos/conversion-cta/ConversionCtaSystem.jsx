@@ -7,6 +7,7 @@ const ConversionCtaSystem = () => {
   const [goal, setGoal] = useState("call");
   const [layout, setLayout] = useState("hero");
   const [theme, setTheme] = useState("dark");
+  const [buttonStyle, setButtonStyle] = useState("flow");
   const activeConfig = useMemo(() => goals[goal], [goal]);
 
   return (
@@ -22,12 +23,15 @@ const ConversionCtaSystem = () => {
           onGoalChange={setGoal}
           onLayoutChange={setLayout}
           onThemeChange={setTheme}
+          buttonStyle={buttonStyle}
+          onButtonStyleChange={setButtonStyle}
         />
         <PreviewFrame
           goal={goal}
           layout={layout}
           theme={theme}
           config={activeConfig}
+          buttonStyle={buttonStyle}
         />
       </div>
     </section>
