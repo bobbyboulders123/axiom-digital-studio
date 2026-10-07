@@ -1,6 +1,7 @@
 import React from "react";
 import SelectionGroup from "./SelectionGroup.jsx";
-import { goalIds, goals, layouts, themes } from "../conversionCtaData.js";
+import ThemeSwitcher from "../pasted/controls/ThemeSwitcher.jsx";
+import { goalIds, goals, layouts } from "../conversionCtaData.js";
 
 const ControlPanel = ({
   goal,
@@ -39,12 +40,12 @@ const ControlPanel = ({
           value={layout}
           onChange={onLayoutChange}
         />
-        <SelectionGroup
-          label="Preview theme"
-          options={themes}
-          value={theme}
-          onChange={onThemeChange}
-        />
+        <div>
+          <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.24em] text-cyan">
+            Preview theme
+          </p>
+          <ThemeSwitcher value={theme} onChange={onThemeChange} />
+        </div>
       </div>
     </div>
   );
