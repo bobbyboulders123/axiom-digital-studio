@@ -2,6 +2,29 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "../../utils/gsapUtils";
 import SectionHeader from "../ui/SectionHeader";
 
+const StandardCard = ({ title, emphasized = false, children }) => (
+  <div
+    className={`manifesto-text rounded-[2rem] border bg-[#0B0F14]/55 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl ${
+      emphasized ? "border-cyan/20" : "border-white/10"
+    }`}
+  >
+    {title && (
+      <div className="mb-5 flex items-center gap-3">
+        <div
+          aria-hidden="true"
+          className={`h-2.5 w-2.5 shrink-0 rounded-full ${
+            emphasized ? "bg-cyan" : "bg-white/80"
+          }`}
+        />
+        <h3 className="text-xl font-medium text-white md:text-2xl">
+          {title}
+        </h3>
+      </div>
+    )}
+    <p className="text-lg leading-8 text-white/80 md:text-xl">{children}</p>
+  </div>
+);
+
 const Philosophy = () => {
   const containerRef = useRef(null);
 
@@ -74,44 +97,25 @@ const Philosophy = () => {
         </div>
 
         <div className="space-y-8 md:col-span-8 lg:col-span-7 md:pt-10">
-          <div className="manifesto-text rounded-[2rem] border border-white/10 bg-[#0B0F14]/55 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl">
-            <div className="mb-5 flex items-center gap-3">
-              <div className="h-2.5 w-2.5 rounded-full bg-white/80" />
-              <h3 className="text-xl font-medium text-white md:text-2xl">
-                The Industry Standard is Broken
-              </h3>
-            </div>
-            <p className="text-lg leading-8 text-steel md:text-xl">
-              Much of the industry still runs on dated templates, bloated
-              plug-ins, rushed timelines, and weak messaging. The result is a
-              website that feels generic, loads poorly, and fails to reflect the
-              real quality of the business behind it.
-            </p>
-          </div>
+          <StandardCard title="The Industry Standard is Broken">
+            Much of the industry still runs on dated templates, bloated
+            plug-ins, rushed timelines, and weak messaging. The result is a
+            website that feels generic, loads poorly, and fails to reflect the
+            real quality of the business behind it.
+          </StandardCard>
 
-          <div className="manifesto-text rounded-[2rem] border border-cyan/15 bg-[linear-gradient(180deg,rgba(53,208,255,0.06),rgba(255,255,255,0.02))] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl">
-            <div className="mb-5 flex items-center gap-3">
-              <div className="h-2.5 w-2.5 rounded-full bg-cyan shadow-glow" />
-              <h3 className="text-xl font-medium text-cyan md:text-2xl">
-                A More Deliberate Process
-              </h3>
-            </div>
-            <p className="text-lg leading-8 text-white md:text-xl">
-              We approach each project with more intention: stronger structure,
-              clearer messaging, careful design decisions, and QA throughout the
-              process. Before launch, we refine, test, and pressure-check the
-              experience so the final site feels credible, smooth, and ready for
-              real visitors.
-            </p>
-          </div>
+          <StandardCard title="A More Deliberate Process" emphasized>
+            We approach each project with more intention: stronger structure,
+            clearer messaging, careful design decisions, and QA throughout the
+            process. Before launch, we refine, test, and pressure-check the
+            experience so the final site feels credible, smooth, and ready for
+            real visitors.
+          </StandardCard>
 
-          <div className="manifesto-text relative overflow-hidden rounded-[2rem] border border-steel/20 bg-[#0B0F14]/60 p-10 shadow-[0_20px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-            <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-electric to-cyan shadow-glow-electric" />
-            <p className="text-xl italic leading-relaxed tracking-wide text-white md:text-[1.65rem]">
-              &quot;Your website shouldn&apos;t just exist. It should be proof
-              of your quality.&quot;
-            </p>
-          </div>
+          <StandardCard>
+            &quot;Your website shouldn&apos;t just exist. It should be proof
+            of your quality.&quot;
+          </StandardCard>
         </div>
       </div>
     </section>
