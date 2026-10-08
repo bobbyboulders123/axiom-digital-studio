@@ -65,7 +65,7 @@ const Hero = () => {
     >
       <div
         ref={bgRef}
-        className="absolute inset-0 z-0 overflow-hidden pointer-events-none origin-bottom opacity-0"
+        className="absolute inset-x-0 top-[-3%] bottom-[-3%] z-0 overflow-hidden pointer-events-none origin-bottom opacity-0"
         style={{ transformStyle: "preserve-3d" }}
       >
         <div
@@ -74,7 +74,7 @@ const Hero = () => {
         ></div>
 
         <div className="absolute inset-0 bg-[#0B0F14]/30 mix-blend-multiply z-0"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/10 via-[#05070A]/30 to-[#05070A]/95 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/10 via-[#05070A]/30 to-[#0B0F14]/95 z-0"></div>
 
         <div className="absolute top-0 right-0 w-[80vw] h-[80vw] max-w-[900px] max-h-[900px] bg-[radial-gradient(ellipse_at_center,_rgba(47,128,237,0.15)_0%,_transparent_60%)] translate-x-1/4 -translate-y-1/4 mix-blend-screen opacity-80"></div>
         <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(53,208,255,0.08)_0%,_transparent_60%)] -translate-x-1/3 translate-y-1/4 mix-blend-screen"></div>
@@ -101,9 +101,19 @@ const Hero = () => {
           }}
         ></div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#05070A] via-[#0B0F14]/90 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-[#0B0F14]/90 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#05070A] via-transparent to-transparent z-10" />
       </div>
+
+      {/* Keep the transition fade stationary while the graphic floats beneath it. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-[30%] z-10 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(11, 15, 20, 0) 0%, rgba(11, 15, 20, 0.9) 70%, #0B0F14 90%, #0B0F14 100%)",
+        }}
+      />
 
       <div className="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center text-center">
         <div ref={headlineRef} className="opacity-0">
