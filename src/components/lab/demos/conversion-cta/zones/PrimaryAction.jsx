@@ -9,8 +9,8 @@ const PrimaryAction = ({ children, theme, buttonStyle = "flow" }) => {
         label={children}
         fillColor={theme === "light" ? "#24160f" : "#0b0f14"}
         labelColor="#ffffff"
-        accentColor="#ff5f00"
-        accentSoftColor="#ff9253"
+        accentColor="#2FD6FF"
+        accentSoftColor="#3B82F6"
       />
     );
   }
